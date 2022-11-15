@@ -1,0 +1,266 @@
+body{
+    background-color: #77A8AC;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+}
+
+*{
+    user-select: none;
+    font-family: 'Lilita One', cursive;
+}
+
+.start,
+.selection,
+.game,
+.wellDone,
+.final{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    place-items: center;
+    gap: 2vh;
+    width: 100%;
+    height: 100%;
+}
+
+.game{
+    justify-content: flex-start;
+}
+
+.startButton,.easyButton,.normalButton, .hardButton, .againButton, .homeButton{
+    width: 100%;
+    position: relative;
+    align-self: center;
+    background-color: white;
+    box-shadow: 0px 8px black;
+    border: 0px;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 5% 5%;
+    margin-bottom: 10px;
+    color: black;
+    font-size: 25px;
+}
+
+.homeButton{
+    background-color: black;
+    box-shadow: 0px 8px white;
+    color: white;
+}
+
+.startButton p,.easyButton p,.normalButton p , .hardButton p, .againButton p, .homeButton p {
+    margin: 3%;
+    margin-right: 6%;
+}
+
+.startButton:active,.easyButton:active,.normalButton:active, .hardButton:active, .againButton:active,.homeButton:active{
+    animation: animate 0.2s;
+    -webkit-animation: animate 0.2s;
+}
+
+@keyframes animate{
+    0%{
+        transform: rotate(0deg) translateX(0px);
+        -webkit-transform: rotate(0deg) translateX(0px);
+    }
+    25%{
+        transform: rotate(-20deg) translateX(-10px);
+        -webkit-transform: rotate(-20deg) translateX(-10px);
+    }
+    50%{
+        transform: rotate(0deg) translateX(0px);
+        -webkit-transform: rotate(0deg) translateX(0px);
+    }
+    75%{
+        transform: rotate(20deg) translateX(10px);
+        -webkit-transform: rotate(20deg) translateX(10px);
+    }
+    100%{
+        transform: rotate(0deg) translateX(0px);
+        -webkit-transform: rotate(0deg) translateX(0px);
+    }
+}
+
+.words{
+    font-size: 20px;
+    width: 100%;
+    margin: 0 !important;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-weight: 500;
+}
+
+.arrowHead{
+    margin-right: 10px;
+    max-width: 15px;
+    height: auto;
+}
+
+.title{
+    width: 60%;
+}
+
+.preview{
+    width: 60%;
+}
+
+.hide{
+    display: none !important;
+}
+
+.game p{
+    font-size: 30px;
+}
+
+.questionImage{
+    width: 80%;
+}
+
+.options{
+    display: flex;
+    gap: 20px;
+}
+
+.btn1, .btn2{
+    background-color: transparent;
+    border: transparent;
+    position: relative;
+}
+
+.clock{
+    width: 150px;
+    height: 150px;
+}
+
+.time{
+    position: absolute;
+    color: white;
+    left: 50%;
+    top: 50%;
+    margin: 0;
+    transform: translate(-50%,-50%);
+    margin-top: 5px;
+    font-size: 40px !important;
+}
+
+.popUp{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    place-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    z-index: 20;
+    top: 0;
+    background-color: transparent;
+}
+
+.background{
+    padding: 20px;
+    position: relative;
+    width: 70%;
+    height: auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.answer{
+    color: white;
+    font-size: 30px;
+    margin: 0px;
+}
+
+.endImage{
+    width: 50%;
+}
+
+/*mobile*/
+@media screen and (max-width: 767px){
+    .startButton, .easyButton,.normalButton, .hardButton, .againButton, .homeButton {
+    width: calc(100% - 100px);
+    justify-content: center;
+    align-items: center;
+    }
+}
+
+/*ipad*/
+@media screen and (min-width: 768px) and (max-width: 1199px){
+    .start,.game,.final{
+        margin-top: 30px;
+    }
+    .startButton,.easyButton,.normalButton,.hardButton,.readyButton,.againButton,.homeButton{
+        padding: 3% 2.5%;
+        max-width: 300px;
+    }
+    .words{
+        font-size: 30px;
+    }
+    .arrowHead{
+        max-width: 20px;
+    }
+    .text{
+        font-size: 40px;
+    }
+    .clock{
+        width: 350px;
+        height: 350px;
+    }
+    .game p{
+        font-size: 60px;
+        margin: 20px;
+    }
+    .time{
+        margin-top: 10px !important;
+        margin-left: 0 !important;
+        font-size: 80px !important;
+    }
+    .background{
+        padding: 30px;
+    }
+    .image{
+        width: 50%;
+    }
+}
+
+/*desktop*/
+@media screen and (min-width:1200px){
+    body{
+        display: flex;
+        justify-content: center;
+    }
+    .start,.selection, .game, .final, .popUp{
+        max-width: 400px;
+    }
+    .startButton,.easyButton,.normalButton,.hardButton,.againButton,.homeButton{
+        padding: 4%;
+        max-width: 250px;
+    }
+    .game p{
+        margin: 10px;
+    }
+    .time{
+        margin-top: 5px !important;
+        margin-left: 0 !important;
+    }
+}
+
